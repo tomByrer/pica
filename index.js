@@ -44,6 +44,7 @@ function resizeBuffer(options, callback) {
     toHeight: options.toHeight|0,
     quality:  options.quality,
     alpha:    options.alpha,
+    blurRadius: options.blurRadius,
     unsharpAmount:    options.unsharpAmount,
     unsharpThreshold: options.unsharpThreshold
   };
@@ -117,8 +118,11 @@ function resizeCanvas(from, to, options, callback) {
     alpha:    options.alpha,
     unsharpAmount:    options.unsharpAmount,
     unsharpThreshold: options.unsharpThreshold,
+    blurRadius: options.blurRadius,
     transferable: true
   };
+
+  console.log(_opts);
 
   resizeBuffer(_opts, function (err/*, output*/) {
     if (err) {
